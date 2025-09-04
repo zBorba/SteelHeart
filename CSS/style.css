@@ -32,8 +32,8 @@ body {
 /* Imagem no centro, ocupando só parte da tela */
 .hero-image {
   position: relative;
-  width: 80%;        
-  max-width: 900px;   
+  width: 85%;        
+  max-width: 950px;   
 }
 .hero-image img {
   width: 100%;
