@@ -31,9 +31,10 @@ body {
   text-align: center;
 }
 
+/* Container flexível */
 .hero .container {
   display: flex;
-  flex-direction: column; /* mobile padrão */
+  flex-direction: column; /* padrão mobile */
   align-items: center;
   justify-content: center;
 }
@@ -44,7 +45,14 @@ body {
   flex-direction: column;
   gap: 10px;
   margin-bottom: 15px;
+  position: relative;
+  top: 50%;
+  left: 140px;
+  
+  
 }
+
+/* Ícones sociais linkados */
 .social-links a {
   color: #ff4d4d;
   font-size: 28px;
@@ -59,24 +67,30 @@ body {
 .hero-image {
   position: relative;
   width: 100%;
-  max-width: 950px;
+  max-width: 950px; /* limite máximo */
+  margin: 0 auto;
 }
 .hero-image img {
   width: 100%;
-  height: auto;
+  height: auto; /* mantém proporção */
+  max-height: 500px; /* limite de altura para desktops grandes */
+  object-fit: cover;
   border-radius: 6px;
   display: block;
 }
 
-/* Botão de download */
+/* Botão Baixar / link externo */
 .download-btn {
   font-weight: bold;
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   transition: transform 0.2s ease-in-out;
 }
+.download-btn:hover {
+  transform: scale(1.05);
+}
 
-/* Desktop: botão flutuando */
+/* Desktop: botão flutuando sobre a imagem e ícones à esquerda */
 @media (min-width: 992px) {
   .hero .container {
     flex-direction: row;
@@ -84,7 +98,6 @@ body {
   }
   .social-links {
     margin-bottom: 0;
-    flex-direction: column;
     margin-right: 20px;
   }
   .download-btn {
@@ -94,28 +107,61 @@ body {
   }
 }
 
-/* Mobile: botão abaixo da imagem */
-@media (max-width: 991px) {
-  .hero .container {
-    flex-direction: column;
-    align-items: center;
+/* Tablets e notebooks menores */
+@media (max-width: 1024px) {
+  .hero-image img {
+    max-height: 400px;
   }
+
+  /* Aproxima os ícones sociais da imagem */
+  .social-links {
+    margin-right: 15px;
+  }
+
+  /* Botão "Baixar" flutuando sobre a imagem */
+  .download-btn {
+    bottom: 15px;
+    left: 15px;
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-image img {
+    max-height: 300px;
+  }
+
+  /* Ícones centralizados abaixo da imagem */
+  .social-links {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 15px;
+    gap: 15px;
+  }
+
+  /* Botão "Baixar" abaixo da imagem */
   .download-btn {
     position: static;
     margin-top: 15px;
     display: inline-block;
-  }
-  .social-links {
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    font-size: 0.9rem;
+    padding: 8px 15px;
   }
 }
 
-.download-btn:hover {
-  transform: scale(1.05);
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .download-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  .social-links a {
+    font-size: 20px;
+  }
 }
+
 
 /* =========================
    SEÇÕES
@@ -267,3 +313,18 @@ footer a:hover {
     object-fit: cover;
   }
 }
+
+/* Tablets e notebooks menores */
+@media (max-width: 1024px) {
+  .hero-image img {
+    max-height: 400px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-image img {
+    max-height: 300px;
+  }
+}
+
