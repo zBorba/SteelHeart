@@ -1,0 +1,153 @@
+/* Estilo geral */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #111 !important;
+}
+.navbar .nav-link {
+  color: #c9c9c9 !important;
+}
+.navbar .nav-link:hover {
+  color: #4db5ff !important;
+}
+
+/* Hero Section */
+.hero {
+  background: url('../img/banner.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Container flex para imagem + ícones */
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ícones sociais */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #fff;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 28px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+  color: #ff4d4d;
+  transform: translateX(-5px);
+}
+
+.social-links a i {
+  background: none !important;
+  border-radius: 0 !important;
+}
+
+/* Imagem central */
+.image-container {
+  position: relative;
+  text-align: center;
+}
+.central-image {
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Botão sobre a imagem */
+.download-btn {
+  bottom: 10px;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease-in-out;
+}
+.download-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Responsivo: ícones abaixo da imagem em telas pequenas */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    flex-direction: column;
+  }
+  .social-links {
+    flex-direction: row;
+    margin-top: 15px;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+
+/* Seções */
+section {
+  padding: 60px 0;
+}
+.bg-dark-alt {
+  background-color: #2a2d34;
+}
+
+/* Títulos */
+h2 {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Textos */
+p, .lead {
+  color: #c9c9c9;
+}
+
+/* Personagens */
+#personagens img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border: 3px solid #4db5ff;
+}
+
+/* Carrossel */
+.carousel-item img {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+/* Rodapé */
+footer {
+  background-color: #111;
+  color: #c9c9c9;
+  font-size: 0.9rem;
+}
+footer a {
+  color: #4db5ff;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #e63946;
+}
+
+/* Fundo da galeria/carrossel */
+#carrossel {
+  background-color: #2a2d34;
+  color: #f5f5f5;
+}
+#carrossel h2 {
+  color: #ffffff;
+}
