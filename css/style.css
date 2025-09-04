@@ -20,31 +20,33 @@ body {
 }
 
 /* Hero Section */
-/* Hero centralizado */
 .hero {
+  padding: 80px 15px 60px;
+  text-align: center;
+}
+
+/* Hero container flexível */
+.hero .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 0; /* espaço abaixo do header fixo */
-  position: relative;
+  flex-direction: column; /* padrão mobile */
 }
 
-/* Imagem no centro, ocupando só parte da tela */
+/* Hero image */
 .hero-image {
   position: relative;
-  width: 85%;        
-  max-width: 950px;   
+  width: 100%;
+  max-width: 950px;
 }
 .hero-image img {
   width: 100%;
   height: auto;
   border-radius: 6px;
   display: block;
-  z-index: 1;
-  position: relative;
 }
 
-/* Botão na parte inferior esquerda da imagem */
+/* Botão de download */
 .download-btn {
   position: absolute;
   bottom: 20px;
@@ -58,78 +60,69 @@ body {
   transform: scale(1.05);
 }
 
-/* Ícones sociais na lateral esquerda */
+/* Ícones sociais lateral esquerda */
 .social-links {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 10; 
 }
-
-
-/* Estilo dos ícones */
 .social-links a {
-  color: #ff4d4d; 
+  color: #ff4d4d;
   font-size: 28px;
   transition: color 0.3s, transform 0.3s;
 }
 .social-links a:hover {
-  color: #4db5ff; 
+  color: #4db5ff;
   transform: scale(1.2);
 }
 
-
-
-/* Imagem central */
-.image-container {
-  position: relative;
-  text-align: center;
-}
-.central-image {
-  max-width: 400px;
-  width: 100%;
-}
-
-/* Botão sobre a imagem */
-.download-btn {
-  bottom: 10px;
-  font-weight: bold;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  transition: transform 0.2s ease-in-out;
-}
-.download-btn:hover {
-  transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-  .social-links {
-    top: auto;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: row;
-    gap: 15px;
+/* =====================
+   RESPONSIVO
+===================== */
+@media (min-width: 992px) {
+  .hero .container {
+    flex-direction: row; /* desktop: horizontal */
+    align-items: flex-start;
   }
 }
 
-
-/* Responsivo: ícones abaixo da imagem em telas pequenas */
-@media (max-width: 768px) {
-  .hero-wrapper {
+@media (max-width: 991px) {
+  /* Mobile e tablet: ícones acima da imagem */
+  .hero .container {
     flex-direction: column;
+    align-items: center;
   }
   .social-links {
     flex-direction: row;
-    margin-top: 15px;
     justify-content: center;
-    gap: 20px;
+    margin-bottom: 15px;
   }
 }
+
+@media (max-width: 768px) {
+  .download-btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    position: static;
+    margin-top: 10px;
+    transform: none;
+  }
+  .social-links a {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .download-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  .social-links a {
+    font-size: 20px;
+  }
+}
+
+
 
 
 /* Seções */
