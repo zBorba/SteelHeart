@@ -20,45 +20,65 @@ body {
 }
 
 /* Hero Section */
+/* Hero centralizado */
 .hero {
-  background: url('../img/banner.png') center/cover no-repeat;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 80px 0; /* espaço abaixo do header fixo */
   position: relative;
 }
 
-/* Container flex para imagem + ícones */
-.hero-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Imagem no centro, ocupando só parte da tela */
+.hero-image {
+  position: relative;
+  width: 80%;        
+  max-width: 900px;   
+}
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
 }
 
-/* Ícones sociais */
+/* Botão na parte inferior esquerda da imagem */
+.download-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease-in-out;
+}
+.download-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Ícones sociais na lateral esquerda */
 .social-links {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 15px;
-  color: #fff;
 }
 
+/* Estilo dos ícones */
 .social-links a {
-  color: #fff;
+  color: #ff4d4d; 
   font-size: 28px;
   transition: color 0.3s, transform 0.3s;
 }
-
 .social-links a:hover {
-  color: #ff4d4d;
-  transform: translateX(-5px);
+  color: #4db5ff; 
+  transform: scale(1.2);
 }
 
-.social-links a i {
-  background: none !important;
-  border-radius: 0 !important;
-}
+
 
 /* Imagem central */
 .image-container {
