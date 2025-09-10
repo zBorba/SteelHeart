@@ -45,12 +45,9 @@ body {
   flex-direction: column;
   gap: 10px;
   margin-bottom: 15px;
-  position: relative;
-  top: 50%;
-  left: 140px;
-  
-  
+  align-items: center; 
 }
+
 
 /* Ícones sociais linkados */
 .social-links a {
