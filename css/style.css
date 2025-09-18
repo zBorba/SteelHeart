@@ -21,14 +21,6 @@ body {
   text-align: center;
 }
 
-.hero-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
-
 .social-links {
   display: flex;
   flex-direction: column;
@@ -45,10 +37,27 @@ body {
   transform: scale(1.2);
 }
 
+.social-links-mobile {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-links-mobile a {
+  color: #ff4d4d;
+  font-size: 28px;
+  transition: color 0.3s, transform 0.3s;
+}
+.social-links-mobile a:hover {
+  color: #4db5ff;
+  transform: scale(1.2);
+}
+
 .hero-image {
   position: relative;
   width: 100%;
   max-width: 700px;
+  margin: 0 auto;
 }
 .hero-image img {
   width: 100%;
@@ -123,31 +132,4 @@ footer {
   font-size: 0.9rem;
   text-align: center;
   padding: 15px 0;
-}
-
-/************* Para telas menores *************/
-@media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .social-links {
-    flex-direction: row;
-    gap: 25px;
-  }
-
-  .hero-image img {
-    max-height: 300px;
-  }
-
-  .download-btn {
-    font-size: 0.9rem;
-    padding: 8px 15px;
-  }
-
-  #personagens img {
-    width: 140px;
-    height: 140px;
-  }
 }
